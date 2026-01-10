@@ -13,13 +13,4 @@ function playThaiTTS(txt) {
     const audio = document.getElementById('thaiAudio');
     audio.src = audioUrl;
     audio.play();
-
-    // const audio = new Audio();
-    // audio.src = audioUrl;
-
-    // audio.play().catch(e => {
-    //     console.error("播放失敗：", e);
-    //     // 如果還是報 NotSupportedError，嘗試在分頁直接打開 URL 看看 Google 是否跳出驗證碼
-    //     window.open(audioUrl, '_blank'); 
-    // });
 }
