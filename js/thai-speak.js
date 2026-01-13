@@ -57,7 +57,7 @@ function playThai(text, gender = 'female') {
     }
 
     utterance.voice = selectedVoice;
-    console.log(`使用聲音: ${selectedVoice.name}, 性別需求: ${gender}`);
+    // console.log(`使用聲音: ${selectedVoice.name}, 性別需求: ${gender}`);
   }
 
   window.speechSynthesis.speak(utterance);
