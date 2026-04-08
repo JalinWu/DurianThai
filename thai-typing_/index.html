@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>泰文打字練習 | DurianThai - 學泰文</title><meta name="author" content="Jalin"><meta name="copyright" content="Jalin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content=".input-container { margin-bottom: 20px; }     #input { width: 100%; padding: 15px; font-size: 18px; border: 1px solid #ccc; border-radius: 5px; }        .typing-container {         max-width: 600">
+<meta property="og:type" content="website">
+<meta property="og:title" content="泰文打字練習">
+<meta property="og:url" content="https://durianthai.blog/thai-typing_/">
+<meta property="og:site_name" content="DurianThai - 學泰文">
+<meta property="og:description" content=".input-container { margin-bottom: 20px; }     #input { width: 100%; padding: 15px; font-size: 18px; border: 1px solid #ccc; border-radius: 5px; }        .typing-container {         max-width: 600">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://durianthai.blog/images/avatar.png">
+<meta property="article:published_time" content="2026-04-05T17:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-07T10:54:09.872Z">
+<meta property="article:author" content="Jalin">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://durianthai.blog/images/avatar.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://durianthai.blog/thai-typing_/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.3"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-0V9Q6BNKZ4"></script><script>window.dataLayer = window.dataLayer || []
+function gtag(){dataLayer.push(arguments)}
+gtag('js', new Date())
+gtag('config', 'G-0V9Q6BNKZ4')
+btf.addGlobalFn('pjaxComplete', () => {
+  gtag('config', 'G-0V9Q6BNKZ4', {'page_path': window.location.pathname})
+}, 'google_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '複製成功',
+    error: '複製失敗',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '載入更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '泰文打字練習',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'page'
+}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3296089977769110" crossorigin="anonymous"></script><link rel="stylesheet" href="https://unpkg.com/simple-keyboard@latest/build/css/index.css"><link rel="stylesheet" href="/css/keyboard.css"><meta name="generator" content="Hexo 8.1.1"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/posts/"><div class="headline">文章</div><div class="length-num">8</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">32</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">5</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/categories/thai-traveling/"><i class="fa-fw fas fa-person-walking-luggage"></i><span> 泰國旅行</span></a></div><div class="menus_item"><a class="site-page" href="/categories/thai-learning/"><i class="fa-fw fas fa-book"></i><span> 泰語學習</span></a></div><div class="menus_item"><a class="site-page" href="/categories/thai-property/"><i class="fa-fw fas fa-house"></i><span> 曼谷看房</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url(/images/hero2-1.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">DurianThai - 學泰文</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/categories/thai-traveling/"><i class="fa-fw fas fa-person-walking-luggage"></i><span> 泰國旅行</span></a></div><div class="menus_item"><a class="site-page" href="/categories/thai-learning/"><i class="fa-fw fas fa-book"></i><span> 泰語學習</span></a></div><div class="menus_item"><a class="site-page" href="/categories/thai-property/"><i class="fa-fw fas fa-house"></i><span> 曼谷看房</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="page-site-info"><h1 id="site-title">泰文打字練習</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div class="container" id="article-container"><style>
+    .input-container { margin-bottom: 20px; }
+    #input { width: 100%; padding: 15px; font-size: 18px; border: 1px solid #ccc; border-radius: 5px; }
+</style>
+
+<style>
+    .typing-container {
+        max-width: 600px;
+        /* margin: 20px auto; */
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    .thai-text {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+        min-height: 40px;
+        font-family: "Leelawadee UI", sans-serif;
+    }
+    .input-field {
+        width: 100%;
+        font-size: 24px;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+    }
+    .input-field:focus {
+        border-color: #4CAF50;
+    }
+    .feedback {
+        margin-top: 15px;
+        font-weight: bold;
+        height: 20px;
+    }
+    .stats {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #666;
+    }
+</style>
+
+<div class="content-container">
+  <aside class="sidebar-left">
+    <span class="mode-label">模式：</span>
+    <div class="mode-selector">
+        <label class="radio-item">
+            <input type="radio" name="display-mode" value="char" checked>
+            <span class="radio-button">字母</span>
+        </label>
+        <label class="radio-item">
+            <input type="radio" name="display-mode" value="word">
+            <span class="radio-button">單字</span>
+        </label>
+        <label class="radio-item">
+            <input type="radio" name="display-mode" value="sentance">
+            <span class="radio-button">句子</span>
+        </label>
+    </div>
+    <div class="toggle-container">
+        <span class="toggle-label">虛擬鍵盤：</span>
+        <label class="switch">
+            <input type="checkbox" id="keyboard-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="toggle-container">
+        <span class="toggle-label">按鍵提示：</span>
+        <label class="switch">
+            <input type="checkbox" id="keyboard-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="typing-container">
+        <div class="button-group">
+            <button id="toggle-btn" class="btn btn-primary">
+                <i class="fas fa-play"></i>
+                <span class="btn-text">開始</span>
+            </button>
+            <button id="skip-btn" class="btn btn-secondary" onclick="resetGame()">
+                <i class="fas fa-forward"></i>
+                <span>跳過</span>
+            </button>
+        </div>
+        <p>請輸入下方的泰文字：</p>
+        <div id="target-text" class="thai-text">กำลังโหลด... (載入中)</div>
+        <input type="text" id="typing-input" class="input-field" placeholder="在這裡開始打字..." autocomplete="off">
+        <div id="feedback" class="feedback"></div>
+    </div>
+  </main>
+
+  <aside class="sidebar-right">
+    <div class="stats">
+        <div>時間：60 秒</div>
+        <div>完成：<span id="score">0</span></div>
+        <div>跳過：<span id="skip">0</span></div>
+    </div>
+  </aside>
+</div>
+
+
+
+
+
+<div class="simple-keyboard"></div>
+
+<script>
+    const wordList = [
+        "สวัสดี", "ขอบคุณ", "สบายดีไหม", "ภาษาไทย", "กรุงเทพฯ", 
+        "กินข้าวหรือยัง", "เรียนภาษาไทย", "สนุกมาก", "ไปไหน", "โชคดี"
+    ];
+    
+    let currentWord = "";
+    let score = 0;
+
+    const targetDisplay = document.getElementById('target-text');
+    const inputField = document.getElementById('typing-input');
+    const feedback = document.getElementById('feedback');
+    const scoreDisplay = document.getElementById('score');
+
+    function nextWord() {
+        // const randomIndex = Math.floor(Math.random() * wordList.length);
+        // currentWord = wordList[randomIndex];
+        currentWord = generateThaiPattern();
+        targetDisplay.innerText = currentWord;
+        inputField.value = "";
+        feedback.innerText = "";
+    }
+
+    inputField.addEventListener('input', () => {
+        const val = inputField.value;
+        
+        if (val === currentWord) {
+            feedback.innerText = "正確！ 👍";
+            feedback.style.color = "green";
+            score++;
+            scoreDisplay.innerText = score;
+            setTimeout(nextWord, 800);
+        } else if (currentWord.startsWith(val)) {
+            feedback.innerText = "打字中...";
+            feedback.style.color = "#666";
+        } else {
+            feedback.innerText = "拼字出錯了唷";
+            feedback.style.color = "red";
+        }
+    });
+
+    function resetGame() {
+        score = 0;
+        scoreDisplay.innerText = score;
+        nextWord();
+    }
+
+    function generateThaiPattern() {
+        // 泰文子音的 Unicode 範圍：0x0E01 (ก) 到 0x0E2E (ฮ)
+        const thaiConsonants = [];
+        for (let i = 0x0E01; i <= 0x0E2E; i++) {
+            thaiConsonants.push(String.fromCharCode(i));
+        }
+
+        // 隨機選取兩個索引
+        const idx1 = Math.floor(Math.random() * thaiConsonants.length);
+        let idx2 = Math.floor(Math.random() * thaiConsonants.length);
+
+        // 確保兩個子音不重複（可選）
+        while (idx1 === idx2) {
+            idx2 = Math.floor(Math.random() * thaiConsonants.length);
+        }
+
+        const char1 = thaiConsonants[idx1];
+        const char2 = thaiConsonants[idx2];
+
+        // 回傳格式：4個相同子音 + 空格 + 4個相同子音
+        return `${char1.repeat(4)} ${char2.repeat(4)}`;
+    }
+
+    // 測試呼叫
+    // console.log(generateThaiPattern());
+
+    // 初始化
+    window.onload = nextWord;
+</script>
+
+<!-- <div class="input-container">
+    <input id="input" type="text" placeholder="點擊此處開始輸入泰文..." />
+</div>
+
+<div class="simple-keyboard"></div> -->
+
+<script>
+const toggleBtn = document.getElementById('toggle-btn');
+const btnText = toggleBtn.querySelector('.btn-text');
+const btnIcon = toggleBtn.querySelector('i');
+
+let isRunning = false;
+
+toggleBtn.addEventListener('click', function() {
+  isRunning = !isRunning;
+
+  if (isRunning) {
+    // 切換為「停止」狀態
+    this.classList.add('is-active');
+    btnText.textContent = '停止';
+    
+    // 更新 Icon (以 FontAwesome 為例)
+    btnIcon.classList.remove('fa-play');
+    btnIcon.classList.add('fa-stop');
+    
+    console.log('計時開始...');
+  } else {
+    // 切換回「開始」狀態
+    this.classList.remove('is-active');
+    btnText.textContent = '開始';
+    
+    btnIcon.classList.remove('fa-stop');
+    btnIcon.classList.add('fa-play');
+    
+    console.log('計時停止');
+  }
+});
+
+// 跳過按鈕邏輯
+document.getElementById('skip-btn').addEventListener('click', () => {
+  console.log('跳過當前項目');
+});
+
+document.addEventListener('keydown', function(event) {
+  const typingInput = document.getElementById('typing-input');
+
+  // 1. 檢查目前焦點是否已經在輸入框內，如果是，就不重複處理
+  if (document.activeElement === typingInput) return;
+
+  // 2. 排除特殊功能鍵（如 F1-F12, Alt, Ctrl, Meta, Shift, Tab, Escape 等）
+  // 我們只想在使用者按下「可輸入字元」時才觸發對焦
+  if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+    
+    // 自動對焦到輸入框
+    typingInput.focus();
+    
+    /* 注意：在某些瀏覽器中，這第一個按下的字元可能不會自動填入
+       若發現第一個字漏掉了，可以用以下方式補上：
+       typingInput.value += event.key;
+       event.preventDefault(); 
+    */
+  }
+});
+
+</script></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Jalin</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 8.1.1</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.5.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日夜模式切換"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到頂端"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.3"></script><script src="/js/main.js?v=5.5.3"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.7/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="/js/thai-speak.js"></script><script src="/js/thai-tts.js"></script><script src="https://cdn.jsdelivr.net/npm/simple-keyboard@latest/build/index.js"></script><script src="/js/keyboard.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
