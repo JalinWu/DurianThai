@@ -1,0 +1,26 @@
+/* 預設隱藏：先隱藏「警示文字」，只顯示「我的內容」 */
+#mobile-device {
+  display: none;
+}
+
+#computer-device {
+  display: block;
+}
+
+/* 針對行動裝置進行切換（通常以 768px 或 1024px 為界線） */
+@media screen and (max-width: 1024px) {
+  /* 在小螢幕時，顯示警示文字 */
+  #mobile-device {
+    display: block;
+    background-color: #fff3cd; /* 建議加上背景顏色增加辨識度 */
+    color: #856404;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ffeeba;
+  }
+
+  /* 在小螢幕時，隱藏主要內容 */
+  #computer-device {
+    display: none;
+  }
+}
