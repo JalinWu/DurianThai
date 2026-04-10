@@ -3,10 +3,6 @@
   display: none;
 }
 
-#computer-device {
-  display: block;
-}
-
 /* 針對行動裝置進行切換（通常以 768px 或 1024px 為界線） */
 @media screen and (max-width: 1024px) {
   /* 在小螢幕時，顯示警示文字 */
@@ -23,4 +19,217 @@
   #computer-device {
     display: none;
   }
+}
+
+
+:root {
+    /* 莫蘭迪色系主題變數 */
+    /* 
+    --text-main: #4a4a4a;
+    --text-muted: #8b8b8b;*/
+    
+    --correct: #6b8e6b;
+    --incorrect: #b56c6c;
+    --active-key: #6c8cb5;
+    --hint-key: #d4a373; 
+    --key-shadow-color: #c2c2c2;
+
+    /* 手指專屬色系 (莫蘭迪色) */
+    --c-pinky: #d8c3c3;       /* 小指：莫蘭迪粉 */
+    --c-pinky-border: #bfa7a7;
+    --c-ring: #e3d5c8;        /* 無名指：莫蘭迪駝 */
+    --c-ring-border: #c4b5a6;
+    --c-middle: #c8d1c8;      /* 中指：莫蘭迪綠 */
+    --c-middle-border: #a9b5a9;
+    --c-index: #c2cbd4;       /* 食指：莫蘭迪藍 */
+    --c-index-border: #a2adb8;
+    --c-special: #d4d4d4;     /* 特殊鍵：莫蘭迪灰 */
+    --c-special-border: #b0b0b0;
+}
+
+.container-pim {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header-pim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.stat-value { color: var(--active-key); }
+
+.text-display {
+    font-size: 2rem;
+    line-height: 3rem; 
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    min-height: 80px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+}
+
+.char {
+    transition: color 0.1s;
+}
+.char.correct { color: var(--correct); }
+.char.incorrect, .char.markAsIncorrect { 
+    color: var(--incorrect); 
+    text-decoration: underline; 
+    background-color: #e8c8c8;
+    border-radius: 4px;
+}
+.char.active {
+    border-bottom: 3px solid var(--active-key);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* 虛擬鍵盤樣式 */
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 1rem;
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.key {
+    border: 1px solid;
+    border-radius: 6px;
+    min-width: 45px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 0 var(--key-shadow-color);
+    transition: transform 0.05s, box-shadow 0.05s, filter 0.1s;
+    position: relative;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+/* 按壓效果 */
+.key.pressed {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--key-shadow-color);
+    filter: brightness(0.95);
+}
+
+/* 提示下一個按鍵的效果 */
+.key.hint {
+    border-color: var(--hint-key);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.5), 4px 4px 0 var(--key-shadow-color);
+    animation: pulse-hint 1.5s infinite;
+}
+.key.hint.pressed {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+}
+
+@keyframes pulse-hint {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.1); }
+    100% { filter: brightness(1); }
+}
+
+/* 手指顏色類別 */
+.f-pinky { background: var(--c-pinky); border-color: var(--c-pinky-border); }
+.f-ring { background: var(--c-ring); border-color: var(--c-ring-border); }
+.f-middle { background: var(--c-middle); border-color: var(--c-middle-border); }
+.f-index { background: var(--c-index); border-color: var(--c-index-border); }
+.f-special { background: var(--c-special); border-color: var(--c-special-border); }
+
+.key-shift-char {
+    font-size: 0.85rem;
+    align-self: flex-start;
+    color: var(--text-muted);
+}
+
+.key-normal-char {
+    font-size: 1.1rem;
+    align-self: flex-end;
+    font-weight: bold;
+}
+
+.shift-active .key-shift-char { color: var(--text-main); font-weight: bold; }
+.shift-active .key-normal-char { color: var(--text-muted); font-weight: normal; }
+
+/* 特殊按鍵寬度 */
+.w-backspace { width: 72.5px; justify-content: center; align-items: center; }
+.w-tab { width: 72.5px; justify-content: center; align-items: center; }
+.w-caps { width: 90px; justify-content: center; align-items: center; }
+.w-enter { width: 80px; justify-content: center; align-items: center; }
+.w-shift { width: 112.5px; justify-content: center; align-items: center; }
+.w-space { width: 400px; justify-content: center; align-items: center; }
+
+.btn-restart {
+    background: var(--active-key);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    align-self: center;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+    transition: background 0.2s;
+}
+.btn-restart:hover { background: #2563eb; }
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.instruction {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.legend {
+    display: flex;
+    gap: 8px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+}
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    border: 1px solid #cbd5e1;
 }
