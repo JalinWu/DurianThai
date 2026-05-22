@@ -20,7 +20,7 @@ const KEYBOARD_LAYOUT = [
     // Row 4
     [{code: 'ShiftLeft', label: 'Shift', cls: 'w-shift f-special'}, {code: 'KeyZ', n: 'ผ', s: '(', cls: 'f-pinky'}, {code: 'KeyX', n: 'ป', s: ')', cls: 'f-ring'}, {code: 'KeyC', n: 'แ', s: 'ฉ', cls: 'f-middle'}, {code: 'KeyV', n: 'อ', s: 'ฮ', cls: 'f-index'}, {code: 'KeyB', n: 'ิ', s: 'ฺ', cls: 'f-index'}, {code: 'KeyN', n: 'ื', s: '์', cls: 'f-index'}, {code: 'KeyM', n: 'ท', s: '?', cls: 'f-index'}, {code: 'Comma', n: 'ม', s: 'ฒ', cls: 'f-middle'}, {code: 'Period', n: 'ใ', s: 'ฬ', cls: 'f-ring'}, {code: 'Slash', n: 'ฝ', s: 'ฦ', cls: 'f-pinky'}, {code: 'ShiftRight', label: 'Shift', cls: 'w-shift f-special'}],
     // Row 5
-    [{code: 'Space', n: ' ', s: ' ', label: 'Space', cls: 'w-space f-special'}]
+    [{code: 'Space', n: ' ', label: 'Space', cls: 'w-space f-special'}]
 ];
 
 // 建立對應字典
@@ -33,6 +33,7 @@ const textDisplayEl = document.getElementById('text-display');
 const timeEl = document.getElementById('time');
 const wpmEl = document.getElementById('wpm');
 const accEl = document.getElementById('accuracy');
+const modeEl = document.getElementById('mode'); // Basic | Advanced
 
 // 遊戲狀態
 let targetTextArray = [];
@@ -41,6 +42,26 @@ let isStarted = false;
 let timer = null;
 let timeLeft = 60;
 let isShiftDown = false;
+let modeChecked = document.querySelector('input[name="select"]:checked').id;
+
+// mode: Basic 生成隨機泰文
+function getChar() {
+    var row = Math.floor(Math.random() * 4);
+    var col = Math.floor(Math.random() * KEYBOARD_LAYOUT[row].length);
+    var target = Math.random() < 0.5 ? "n" : "s";
+    return KEYBOARD_LAYOUT[row][col][target];
+}
+function generateRandomThai() {
+    do {
+        var char1 = getChar();
+    } while (!char1);
+    do {
+        var char2 = getChar();
+    } while (!char2);
+
+    // 組合結果
+    return `${char1.repeat(4)}${char2.repeat(4)}`;
+}
 
 function initKeyboard() {
     keyboardEl.innerHTML = '';
@@ -75,7 +96,12 @@ function initKeyboard() {
 
 function startNewQuote() {
     typedTextArray = [];
-    const quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    console.log(`mode: ${modeChecked}`);
+    if (modeChecked == "option-1") {
+        var quote = generateRandomThai();
+    } else {
+        var quote = QUOTES[Math.floor(Math.random() * QUOTES.length)];
+    }
     targetTextArray = Array.from(quote);
     
     updateTextDisplay();
@@ -175,6 +201,12 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timer);
             isStarted = false;
+            Swal.fire({
+                title: '時間到！',
+                text: 'WPM： ' + wpm + '　準確率： ' + accEl.innerText,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
         }
     }, 1000);
 }
@@ -253,6 +285,27 @@ document.getElementById('btn-restart').addEventListener('click', () => {
     wpmEl.innerText = '0';
     accEl.innerText = '100';
     startNewQuote();
+});
+
+modeEl.addEventListener('change', (e) => {
+    var bas = "option-1";
+    var adv = "option-2";
+    var value = e.target.id;
+
+    // 確保觸發的是 input 元素
+    if (e.target.type === 'radio') {
+        console.log(`選擇的值為：${e.target.id}`);
+        modeChecked = value;
+        const elements = document.querySelector('.text-display');
+        if (modeChecked == bas) {
+            elements.classList.remove('adv-sen');
+            elements.classList.add('bas-char');
+        } else {
+            elements.classList.remove('bas-char');
+            elements.classList.add('adv-sen');
+        }
+        startNewQuote();
+    }
 });
 
 initKeyboard();
