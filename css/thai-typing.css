@@ -92,6 +92,7 @@
     
     /* 3. 防止容器剪裁上標 */
     overflow: visible;
+    display: inline-block;
 }
 .bas-char {
     display: flex;
