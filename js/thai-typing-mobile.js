@@ -82,7 +82,7 @@
 
     // 泰文句子庫
     const QUOTES = [
-        // "รู้นี้โมงครึ่ง"
+        // "โมงรู้โมงนี้โมงครึ่ง"
         "สวัสดีครับ",
         "ขอบคุณมากค่ะ",
         "ประเทศไทยมีอากาศร้อน",
@@ -142,34 +142,25 @@
             textDisplayEl.appendChild(span);
         });
 
-        // const spans = Array.from(textDisplayEl.querySelectorAll('.char'));
+        const spans = Array.from(textDisplayEl.querySelectorAll('.char'));
 
-        // // 泰文結合符號 Unicode 範圍
-        // const thaiCombiningRegex = /[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]/;
+        // 泰文結合符號 Unicode 範圍
+        const thaiCombiningRegex = /[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E]/;
 
-        // for (let i = 0; i < spans.length; i++) {
-        //     const span = spans[i];
-        //     // 若當前 span 含有結合符號，且前一個 span 存在
-        //     if (thaiCombiningRegex.test(span.textContent) && index > 0) {
-        //         console.log(spans[index-1]);
-        //         const prevSpan = (spans[index - 1]) ? spans[index - 1] : spans[index - 2];
-        //         // 將結合符號併入前一個子音 span
-        //         prevSpan.textContent += span.textContent;
-        //         // 移除多餘的獨立 span
-        //         span.remove();
-        //     }
-        // }
-        // spans.forEach((span, index) => {
-        //     // 若當前 span 含有結合符號，且前一個 span 存在
-        //     if (thaiCombiningRegex.test(span.textContent) && index > 0) {
-        //         console.log(spans[index-1]);
-        //         const prevSpan = (spans[index - 1]) ? spans[index - 1] : spans[index - 2];
-        //         // 將結合符號併入前一個子音 span
-        //         prevSpan.textContent += span.textContent;
-        //         // 移除多餘的獨立 span
-        //         span.remove();
-        //     }
-        // });
+        spans.forEach((span) => {
+            // 判斷當前 span 是否為結合符號
+            const isCombining = thaiCombiningRegex.test(span.textContent);
+
+            if (isCombining) {
+                let preSpan = span.previousElementSibling;
+
+                // 將文字合併到目標子音，並移除當前 span
+                if (preSpan) {
+                    preSpan.textContent += span.textContent;
+                    span.remove();
+                }
+            }
+        });
     }
 
     function isThaiCombiningChar(char) {
