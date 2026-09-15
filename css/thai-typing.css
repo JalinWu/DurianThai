@@ -79,6 +79,8 @@
     min-height: 80px;
     letter-spacing: 2px;
     word-wrap: break-word;
+    display: inline-block;
+    width: 100%
 }
 .bas-char {
     display: flex;
