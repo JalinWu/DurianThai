@@ -110,8 +110,8 @@ function updateHint() {
             if (keyEl) keyEl.classList.add('hint');
 
             if (hintData.shift) {
-                document.getElementById('key-ShiftLeft').classList.add('hint');
-                document.getElementById('key-ShiftRight').classList.add('hint');
+                document.getElementById('key-ShiftLeft')?.classList.add('hint');
+                document.getElementById('key-ShiftRight')?.classList.add('hint');
             }
         }
     }

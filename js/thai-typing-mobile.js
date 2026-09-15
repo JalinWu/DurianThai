@@ -3,6 +3,7 @@
 
     const keyMobileEl = document.getElementsByClassName('key-mobile');
     const shiftKey = document.getElementById('key-ShiftLeft');
+    let isShiftClicked = false;
 
     // keyboard
     Array.from(keyMobileEl).forEach(element => {
@@ -42,10 +43,24 @@
             // offsetParent 不為 null，代表該 span 目前是顯示狀態 (沒有 display: none)
             if (span.offsetParent !== null) {
                 const content = span.textContent.trim();
+                console.log(content);
 
-                // 如果內容不是空的，就印出 console
-                if (content) {
-                    console.log(content);
+                if(content) {
+                    if (content == '⇧') {
+                        isShiftClicked = !isShiftClicked;
+                    } else {
+                        typedTextArray.push(content);
+                        updateTextDisplay();
+                        updateHint();
+                        if (isShiftClicked) {
+                            setTimeout(() => switchNormalAndShiftKey(), 100);
+                            isShiftClicked = !isShiftClicked;
+                        }
+
+                        if (typedTextArray.length === targetTextArray.length) {
+                            setTimeout(() => startNewQuote(), 300);
+                        }
+                    }
                 }
             }
         });
@@ -68,6 +83,17 @@
     // 泰文句子庫
     const QUOTES = [
         "สวัสดีครับ",
+        "ขอบคุณมากค่ะ",
+        "ประเทศไทยมีอากาศร้อน",
+        "ส้มตำอร่อยมาก",
+        "ภาษาไทยเรียนไม่ยาก",
+        "การเรียนรู้ไม่มีวันสิ้นสุด",
+        "ฉันรักประเทศไทย",
+        "วันนี้วันอะไร",
+        "วันนี้วันที่เท่าไหร่",
+        "บ่ายโมงสิบสี่นาที",
+        "บ่ายสามโมงครึ่ง",
+        "แปดโมงครึ่ง"
     ];
 
     // DOM 元素
@@ -96,8 +122,8 @@
                     span.classList.add('correct');
                 } else {
                     span.classList.add('incorrect');
-                    console.log(char);
-                    console.log(isThaiCombiningChar(char));
+                    // console.log(char);
+                    // console.log(isThaiCombiningChar(char));
                     if (isThaiCombiningChar(char)) {
                         const ex1 = textDisplayEl.childNodes[index - 1];
                         const ex2 = textDisplayEl.childNodes[index - 2];
