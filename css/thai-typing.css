@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
 /* 預設隱藏：先隱藏「警示文字」，只顯示「我的內容」 */
 #mobile-device {
   display: none;
@@ -79,8 +81,10 @@
     min-height: 80px;
     letter-spacing: 2px;
     word-wrap: break-word;
-    display: inline-block;
-    width: 100%
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "liga" 1, "mset" 1;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Sarabun', sans-serif;
 }
 .bas-char {
     display: flex;
