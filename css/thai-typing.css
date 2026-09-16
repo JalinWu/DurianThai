@@ -5,22 +5,20 @@
 
 /* 針對行動裝置進行切換（通常以 768px 或 1024px 為界線） */
 @media screen and (max-width: 1024px) {
-  /* 在小螢幕時，顯示警示文字 */
   #mobile-device {
     display: block;
+  }
+  #computer-device {
+    display: none;
+  }
+}
+.warning-signs {
     background-color: #fff3cd; /* 建議加上背景顏色增加辨識度 */
     color: #856404;
     padding: 15px;
     text-align: center;
     border: 1px solid #ffeeba;
-  }
-
-  /* 在小螢幕時，隱藏主要內容 */
-  #computer-device {
-    display: none;
-  }
 }
-
 
 :root {
     /* 莫蘭迪色系主題變數 */
