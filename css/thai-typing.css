@@ -77,6 +77,8 @@
     min-height: 80px;
     letter-spacing: 2px;
     word-wrap: break-word;
+    text-align: center;
+    justify-content: center;
 }
 
 .bas-char {
@@ -99,6 +101,10 @@
 .char.active {
     border-bottom: 3px solid var(--active-key);
     animation: blink 1s infinite;
+}
+.ch {
+    font-size: 1rem;
+    line-height: 1rem;
 }
 
 @keyframes blink {
