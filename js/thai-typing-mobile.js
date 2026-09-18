@@ -228,7 +228,8 @@
     const textDisplayEl = document.getElementById('text-display');
     const shiftKey = document.getElementById('key-ShiftLeft');
     let isShiftClicked = false;
-    var targetTextCH = "";
+    let targetTextCH = "";
+    let round = 0;
 
     // keyboard
     Array.from(keyMobileEl).forEach(element => {
@@ -283,6 +284,18 @@
                         }
 
                         if (typedTextArray.length === targetTextArray.length) {
+                            round++;
+                            if (round % 10 == 0) {
+                                Swal.fire({
+                                    icon: "success",
+                                    title: `🎉 ${round} 回合達成！`,
+                                    html: `
+                                    <p>覺得練習泰文打字有幫助嗎？<br>歡迎贊助與鼓勵 💛</p>
+                                    <img src="/images/account.PNG" width="100%"/>
+                                    `,
+                                    confirmButtonText:`再練 10 回合`
+                                });
+                            }
                             setTimeout(() => startNewQuote(), 300);
                         }
                     }
